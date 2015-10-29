@@ -1,57 +1,90 @@
-// $("#main").append("Victor");
-// var awesomeThought = "I am Victor and I am awesome";
-// console.log(awesomeThought);
-
-// var funThoughts = awesomeThought.replace("awesome","fun");
-// console.log(funThoughts);
-// $("#main").append(funThoughts);
-
-var formattedName = HTMLheaderName.replace("%data%","Victor");
-var role = "Web developer";
-var formattedRole = HTMLheaderRole.replace("%data%",role);
-
-
-// $("#header").prepend(formattedName);
-// $("#header").append(formattedRole);
-
-var formattedEmail = HTMLemail.replace("%data%","yanky2000@yahoo.com")
-
 var bio = {
 	"name":HTMLheaderName.replace("%data%","Victor Yang"),
 	"role":HTMLheaderRole.replace("%data%","Web Developer"),
-	"yearOfBirth": 1976,
 	"contact":{
 		"mobile": HTMLmobile.replace("%data%","+79150610055"),
 		"email": HTMLemail.replace("%data%","yanky2000@yahoo.com"),
+		"github": HTMLgithub.replace("%data%","https://github.com/yanky2000"),
+		"location": HTMLlocation.replace("%data%","Moscow, Russia")
 	},
 	"bioPic":HTMLbioPic.replace("%data%","images/my_photo.png"),
 	"skills":HTMLskills.replace("%data%",["JS","Web development","russian, korean languages"]),
-	"welcomeMsg":HTMLwelcomeMsg.replace("%data%","Welcome to my page!")
+	"welcomeMessage":HTMLwelcomeMsg.replace("%data%","Welcome to my page!")
 };
 
+var education = {
+	"school": [
+		{
+		"name": "Khabarovsk Academay of Economics and Law",
+		"date": "1993-1998",
+		"majors": ["banking","economics"],
+		"degree": "BA",
+		"location": "Khabarovsk, Russia",
+		"url": ""
+		},
+		{
+		"name": "Kangwon National University",
+		"dates": "1999-2001",
+		"majors": ["marketing"],
+		"degree": "master",
+		"location": "Khabarovsk, Russia",
+		"url": ""
+		}
+		],
+	"onlineCourses": [
+		{
+		"title": "Udacity Front End Developer",
+		"school": "Udacity",
+		"dates": "2015",
+		"url": "#"
+		}
+	]
+};
+
+var work = {
+	"jobs": [
+		{
+		"employer": "Self-employed",
+		"title": "Entrepreneur",
+		"location": "Moscow",
+		"dates": "2011 - present",
+		"description": "trading business"
+		},
+		{
+		"employer": "Carlsberg group, Baltika breweries",
+		"title": "National key account manager",
+		"location": "Moscow",
+		"dates": "2008-2011",
+		"description": "Sales"
+		},
+		{
+		"employer": "MARS LLC.",
+		"title": "Key account manager",
+		"location": "Moscow",
+		"dates": "2006-2008",
+		"description": "Sales"
+		}
+	]
+};
+
+var projects = {
+	"projects": [
+		{
+		"title": "",
+		"dates": "",
+		"description": "",
+		"images": ""
+		}
+	]
+};
+
+
 $("#header").prepend(bio.name,bio.role);
-$("#header").append(bio.bioPic, bio.skills, bio.contact.mobile, bio.contact.email, bio.welcomeMsg);
+$("#header").append(bio.bioPic, bio.welcomeMessage, bio.contact.mobile, bio.contact.email,
+                    bio.contact.github, bio.skills);
 
-var work = {};
-	work.city = HTMLworkLocation.replace("%data%","Moscow");
-	work.title = HTMLworkTitle.replace("%data%","self-employed");
-	work.dates = HTMLworkDates.replace("%data%","2013");
-
-// console.log(work.title);
-// console.log(work.dates);
-// console.log(work.city);
-// console.log(bio.age+1);
-
-var education = {}
-	education["school"] = HTMLschoolName.replace("%data%","Kangwon National Universtiy");
-	education["dates"] = HTMLschoolDates.replace("%data%","1999-2001");
-	education["major"] = HTMLschoolMajor.replace("%data%","Marketing");
-	education["location"] = HTMLschoolLocation.replace("%data%", "Chounchon, S.Korea");
-
-// console.log(education.school);
-// console.log(education.dates);
-// console.log(education.major);
-// console.log(education.location);
-
+// $("#main#workExperience").append(work.jobs);
 $("#main").append(work["title"]);
-$("#main").append(education.school);
+
+$("#main").append(education.school,education.dates);
+
