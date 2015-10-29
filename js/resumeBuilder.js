@@ -15,28 +15,28 @@ var bio = {
 var education = {
 	"school": [
 		{
-		"name": "Khabarovsk Academay of Economics and Law",
-		"date": "1993-1998",
-		"majors": ["banking","economics"],
-		"degree": "BA",
-		"location": "Khabarovsk, Russia",
+		"name": HTMLschoolName.replace("%data%","Khabarovsk Academay of Economics and Law"),
+		"date": HTMLschoolDates.replace("%data%","1993-1998"),
+		"majors": HTMLschoolMajor.replace("%data%",["banking","economics"]),
+		"degree": HTMLschoolDegree.replace("%data%","BA"),
+		"location": HTMLschoolLocation.replace("%data%","Khabarovsk, Russia"),
 		"url": ""
 		},
 		{
-		"name": "Kangwon National University",
-		"dates": "1999-2001",
-		"majors": ["marketing"],
-		"degree": "master",
-		"location": "Khabarovsk, Russia",
+		"name": HTMLschoolName.replace("%data%","Kangwon National University"),
+		"dates":HTMLschoolDates. replace("%data%","1999-2001"),
+		"majors": HTMLschoolMajor.replace("%data%",["marketing"]),
+		"degree": HTMLschoolDegree.replace("%data%","master"),
+		"location": HTMLschoolLocation.replace("%data%","Khabarovsk, Russia"),
 		"url": ""
 		}
 		],
 	"onlineCourses": [
 		{
-		"title": "Udacity Front End Developer",
-		"school": "Udacity",
-		"dates": "2015",
-		"url": "#"
+		"title": HTMLonlineTitle.replace("%data%","Udacity Front End Developer"),
+		"school": HTMLonlineSchool.replace("%data%","Udacity"),
+		"dates": HTMLonlineDates.replace("%data%","2015"),
+		"url": HTMLonlineURL.replace("%data%","")
 		}
 	]
 };
@@ -44,25 +44,25 @@ var education = {
 var work = {
 	"jobs": [
 		{
-		"employer": "Self-employed",
-		"title": "Entrepreneur",
-		"location": "Moscow",
-		"dates": "2011 - present",
-		"description": "trading business"
+		"employer": HTMLworkEmployer.replace("%data%","Self-employed"),
+		"title": HTMLworkTitle.replace("%data%","Entrepreneur"),
+		"location": HTMLworkLocation.replace("%data%","Moscow"),
+		"dates": HTMLworkDates.replace("%data%","2011 - present"),
+		"description": HTMLworkDescription.replace("%data%","trading business")
 		},
 		{
-		"employer": "Carlsberg group, Baltika breweries",
-		"title": "National key account manager",
-		"location": "Moscow",
-		"dates": "2008-2011",
-		"description": "Sales"
+		"employer": HTMLworkEmployer.replace("%data%","Carlsberg group, Baltika breweries"),
+		"title": HTMLworkTitle.replace("%data%","National key account manager"),
+		"location": HTMLworkLocation.replace("%data%","Moscow"),
+		"dates": HTMLworkDates.replace("%data%","2008-2011"),
+		"description": HTMLworkDescription.replace("%data%","Sales")
 		},
 		{
-		"employer": "MARS LLC.",
-		"title": "Key account manager",
-		"location": "Moscow",
-		"dates": "2006-2008",
-		"description": "Sales"
+		"employer": HTMLworkEmployer.replace("%data%","MARS LLC."),
+		"title": HTMLworkTitle.replace("%data%","Key account manager"),
+		"location": HTMLworkLocation.replace("%data%","Moscow"),
+		"dates": HTMLworkDates.replace("%data%","2006-2008"),
+		"description": HTMLworkDescription.replace("%data%","Sales")
 		}
 	]
 };
@@ -70,21 +70,26 @@ var work = {
 var projects = {
 	"projects": [
 		{
-		"title": "",
-		"dates": "",
-		"description": "",
-		"images": ""
+		"title": HTMLprojectTitle.replace("%data%",""),
+		"dates": HTMLprojectDates.replace("%data%",""),
+		"description": HTMLprojectDescription.replace("%data%",""),
+		"image": HTMLprojectImage.replace("%data%","")
 		}
 	]
 };
 
 
 $("#header").prepend(bio.name,bio.role);
+
 $("#header").append(bio.bioPic, bio.welcomeMessage, bio.contact.mobile, bio.contact.email,
-                    bio.contact.github, bio.skills);
+					bio.contact.github, bio.skills);
 
-// $("#main#workExperience").append(work.jobs);
-$("#main").append(work["title"]);
+$("#main").append(work.jobs[1].employer); //works!!
 
-$("#main").append(education.school,education.dates);
+$("#workExperience").append(work.jobs[1].employer); // doesn't show up on the page
+
+$("#education").prepend(work.jobs[1].employer); // doesn't show up on the page
+
+$("#projects").append(work.jobs[1].employer); // doesn't show up on the page
+
 
