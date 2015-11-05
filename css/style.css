@@ -168,6 +168,12 @@ span {
   text-align: center;
 }
 
+/*custom css*/
+.logo {
+  padding: 0px;
+  margin: -20px 5px;
+}
+
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
@@ -212,3 +218,4 @@ span {
     display: block;
   }
 }
+
