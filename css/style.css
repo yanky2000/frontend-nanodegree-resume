@@ -21,7 +21,8 @@ h6 {
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5%;
+  padding: 0 5% 0 6%;
+
 }
 
 h1 {
@@ -168,11 +169,7 @@ span {
   text-align: center;
 }
 
-/*custom css*/
-.logo {
-  padding: 0px;
-  margin: -20px 5px;
-}
+
 
 /* Media queries to handle various device widths */
 
@@ -217,5 +214,18 @@ span {
   .biopic {
     display: block;
   }
+}
+
+/*custom css*/
+
+body { padding-top: 70px; }
+
+.logo {
+  padding: 0px;
+  margin: -20px 5px;
+}
+
+#skills {
+  display: block;
 }
 

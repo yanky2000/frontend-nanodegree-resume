@@ -2,13 +2,13 @@ var bio = {
 	"name":"Victor Yang",
 	"role":"Web Developer",
 	"contacts":{
-		"mobile": "+79150610055",
-		"email": "yanky2000@yahoo.com",
+		"mobile": "+755555555",
+		"email": "webdev@yahoo.com",
 		"github": "https://github.com/yanky2000",
 		"location": "Moscow"
 	},
 	"bioPic":"images/my_photo.png",
-	"skills":["Web development","JS","Russian and Korean languages", "A father"],
+	"skills":["Web development","JS","Russian and Korean languages", "Great father"],
 	"welcomeMessage":"Welcome to my page!",
 	"function": function () {
 		var formattedBioMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
@@ -20,14 +20,15 @@ var bio = {
 		$("#header").prepend (HTMLheaderRole.replace("%data%",bio.role));
 		$("#header").prepend (HTMLheaderName.replace("%data%",bio.name));
 		$("#topContacts").append(formattedBioMobile, formattedBioEmail, formattedBioGithub, formattedBioLocation);
+		$("#footerContacts").append(formattedBioMobile, formattedBioEmail, formattedBioGithub, formattedBioLocation);
 		$("#header").append(formattedBioPic);
+		$("#header").append(formattedBioWelcomeMsg);
 		if(bio.skills.length > 0) {
 			$("#header").append(HTMLskillsStart);
 			bio.skills.forEach(function (skillEntry) {
 				$("#skills").append(HTMLskills.replace("%data%",skillEntry));
 			});
 		};
-		$("#header").append(formattedBioWelcomeMsg);
 	}
 };
 
@@ -50,6 +51,7 @@ var education = {
 		"url": ""
 		}
 		],
+
 	"onlineCourses": [
 		{
 		"title": "Udacity Front End Developer",
@@ -58,6 +60,7 @@ var education = {
 		"url": "Udacity.com"
 		}
 	],
+
 	"function": function () {
 		$("#education").append(HTMLschoolStart);
 		education.schools.forEach(function (schoolEntry) {
